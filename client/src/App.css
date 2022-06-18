@@ -1,0 +1,13 @@
+.search{
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .search input {
+    padding: .7rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    border: 1px solid black;
+    background: rgba(66, 62, 62, 0.1);
+    color: #000
+  }
