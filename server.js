@@ -51,10 +51,13 @@ app.post("/api", (req,res)=>{
 
 app.get("/api/search", (req,res)=>{
     const url =`http://itunes.apple.com/search?term=${search}&media=${media}&limit=30`;
-    fetch(url)
+    fetch(url, {headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }})
     .then(res => res.json())
     .then(json => {
-        console.log("searching for " + search + "in " + media) ;
+        console.log("searching for " + search + " in " + media) ;
         res.json(json);
     });
 });
