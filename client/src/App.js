@@ -22,10 +22,12 @@ const [favorite, setFavorites] = useState([]);
 
 //fetch the data from the server when the user searches for something if it exists
 useEffect(()=>{
-  fetch("/api/search").then( response=> response.json() )
+  fetch("/api/search",{headers : { 
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+   }}).then( response=> response.json() )
   .then( data=>{ setBackendData(data)} )
 },[setSearch])
-
 //post search parameters  search and media-type to the server 
   function searchTitles()
   { 
