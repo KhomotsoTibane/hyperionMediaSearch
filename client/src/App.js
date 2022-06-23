@@ -24,7 +24,7 @@ const [favorite, setFavorites] = useState([]);
 
   
  useEffect(()=>{
-  fetch("http://localhost:5000/api/search",{headers : { 
+  fetch("/api/search",{headers : { 
     'Content-Type': 'application/json',
     'Accept': 'application/json'
    }}).then(response=> response.json() )
