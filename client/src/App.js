@@ -21,15 +21,26 @@ const [favorite, setFavorites] = useState([]);
 
 
 //fetch the data from the server when the user searches for something if it exists
-useEffect(()=>{
-  fetch("/api/search",{headers : { 
+// useEffect(()=>{
+//   fetch("/api/search",{headers : { 
+//     'Content-Type': 'application/json',
+//     'Accept': 'application/json'
+//    }})
+//    .then(response => console.log(response))
+//    .then(data => console.log(data))
+//    .catch(error => console.error('Unable to get items.', error));
+// },[setSearch])
+  
+  
+  useEffect(()=>{
+  fetch("http://localhost:5000/api/search",{headers : { 
     'Content-Type': 'application/json',
     'Accept': 'application/json'
-   }})
-   .then(response => console.log(response))
-   .then(data => console.log(data))
-   .catch(error => console.error('Unable to get items.', error));
+   }}).then( response=> response.json() )
+  .then( data => setBackendData(data))
 },[setSearch])
+  
+  
 //post search parameters  search and media-type to the server 
   function searchTitles()
   { 
