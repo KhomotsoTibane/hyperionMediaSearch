@@ -36,8 +36,8 @@ const [favorite, setFavorites] = useState([]);
   fetch("http://localhost:5000/api/search",{headers : { 
     'Content-Type': 'application/json',
     'Accept': 'application/json'
-   }}).then( response=> response.json() )
-  .then( data => setBackendData(data))
+   }}).then( response=> response.text() )
+  .then( text => console.log(text))
 },[setSearch])
   
   
