@@ -25,8 +25,10 @@ useEffect(()=>{
   fetch("/api/search",{headers : { 
     'Content-Type': 'application/json',
     'Accept': 'application/json'
-   }}).then( response=> response.json() )
-  .then( data=>{ setBackendData(data)} )
+   }})
+   .then(response => console.log(response))
+   .then(data => console.log(data))
+   .catch(error => console.error('Unable to get items.', error));
 },[setSearch])
 //post search parameters  search and media-type to the server 
   function searchTitles()
